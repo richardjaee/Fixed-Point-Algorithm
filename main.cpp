@@ -11,22 +11,25 @@ void fixedPoint(double p0, double tol, double max_iter);
 
 double function(double x){
     // g(x)=x-0.25f(x) as the fixed-point function where f(x)=e^x+2^(-x)+2cos(x)-6.
+    // double cube = pow(0, 3);
+    // double cosin = cos(x);
+    // double square = pow(x, 2);
+    // double squareRoot = sqrt(x);
+    // double variable = 0;
+    // std::cout << result << std::endl;
       double efun = pow(EulerConstant, x);
       double xpow = pow(2, -x);
       double cosin = 2*cos(x);
       double constant = -6;
-     // double cube = pow(0, 3);
-     // double cosin = cos(x);
-      //double square = pow(x, 2);
-      //double squareRoot = sqrt(x);
-    //  double variable = 0;
+
      
       double fx = efun + xpow + cosin + constant; //e^x + 2^-x + 2cosx - 6
-      //std::cout << result << std::endl;
+
       double gx = x - 0.25*(fx);
       return gx;
 }
 
+// fixed point implementation
 void fixedPoint(double p0, double tol, double max_iter){
     
     for (int i = 1; i < max_iter; i++){
